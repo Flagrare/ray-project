@@ -8,8 +8,8 @@ You can move the circle using the keyboard arrows. If you are hit by the square,
 
 **GAMEPLAY**
 
-![Gameplay](./screenshot_start.png)
+![Gameplay](./start.png)
 
 **GAME OVER**
 
-![Game Over](./screenshot_game_over.png)
+![Game Over](./game_over.png)
