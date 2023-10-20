@@ -1,7 +1,7 @@
-#include "raylib.h"
-#include "string.h"
-#include "stdlib.h"
-#include <iostream>
+#include <raylib.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 int main()
 {
@@ -16,7 +16,6 @@ int main()
 
     int square_x{400}, square_y{0}, square_width{50}, square_height{50}, square_direction{10};
     int square_center_x{0}, square_center_y{0};
-    int square_y_bottom{square_y + square_height}, square_y_top{square_y}, square_x_right{square_x + square_width}, square_x_left{square_x};
 
     int dx{0}, dy{0};
     int max_edge_dist_x{(square_width / 2) + (circle_radius)}, max_edge_dist_y{(square_height / 2) + (circle_radius)};
@@ -74,19 +73,19 @@ int main()
                 circle_center_y += particle_speed;
             }
 
-            std::cout << "square_x:" << square_x << "\n";
-            std::cout << "square_y: " << square_y << "\n";
+            printf("square_x: %d\n", square_x);
+            printf("square_y: %d\n", square_y);
 
             square_center_x = square_x + square_width / 2;
             square_center_y = square_y + square_height / 2;
 
-            std::cout << "square_center_x:" << square_center_x << "\n";
-            std::cout << "square_center_y: " << square_center_y << "\n";
+            printf("square_center_x: %d\n", square_center_x);
+            printf("square_center_y: %d\n", square_center_y);
 
             dx = abs(circle_center_x - square_center_x);
             dy = abs(circle_center_y - square_center_y);
-            std::cout << "dx:" << dx << "\n";
-            std::cout << "dy: " << dy << "\n";
+            printf("dx: %d\n", dx);
+            printf("dy: %d\n", dy);
 
             collision_with_square = dx <= max_edge_dist_x && dy <= max_edge_dist_y;
 
