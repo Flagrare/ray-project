@@ -31,7 +31,7 @@ int main()
         BeginDrawing();
         ClearBackground(BLACK);
 
-        DrawCircle(circle_center_x, circle_center_y, circle_radius, RED);
+        DrawCircle(circle_center_x, circle_center_y, circle_radius, WHITE);
         DrawRectangle(square_x, square_y, square_width, square_height, BLUE);
 
         if (collision_with_square)
