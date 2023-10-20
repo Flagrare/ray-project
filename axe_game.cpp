@@ -24,6 +24,14 @@ int main()
 
     bool collision_with_square{false};
 
+    square_center_x = square_x + square_width / 2;
+    square_center_y = square_y + square_height / 2;
+
+    dx = abs(circle_center_x - square_center_x);
+    dy = abs(circle_center_y - square_center_y);
+
+    collision_with_square = dx <= max_edge_dist_x && dy <= max_edge_dist_y;
+
     SetTargetFPS(60);
 
     while (!WindowShouldClose())
@@ -49,7 +57,21 @@ int main()
         }
         else
         {
+            printf("square_x: %d\n", square_x);
+            printf("square_y: %d\n", square_y);
 
+            square_center_x = square_x + square_width / 2;
+            square_center_y = square_y + square_height / 2;
+
+            printf("square_center_x: %d\n", square_center_x);
+            printf("square_center_y: %d\n", square_center_y);
+
+            dx = abs(circle_center_x - square_center_x);
+            dy = abs(circle_center_y - square_center_y);
+            printf("dx: %d\n", dx);
+            printf("dy: %d\n", dy);
+
+            collision_with_square = dx <= max_edge_dist_x && dy <= max_edge_dist_y;
             if (square_y > (height - square_height) || square_y < 0)
             {
                 square_direction = -square_direction;
@@ -72,22 +94,6 @@ int main()
             {
                 circle_center_y += particle_speed;
             }
-
-            printf("square_x: %d\n", square_x);
-            printf("square_y: %d\n", square_y);
-
-            square_center_x = square_x + square_width / 2;
-            square_center_y = square_y + square_height / 2;
-
-            printf("square_center_x: %d\n", square_center_x);
-            printf("square_center_y: %d\n", square_center_y);
-
-            dx = abs(circle_center_x - square_center_x);
-            dy = abs(circle_center_y - square_center_y);
-            printf("dx: %d\n", dx);
-            printf("dy: %d\n", dy);
-
-            collision_with_square = dx <= max_edge_dist_x && dy <= max_edge_dist_y;
 
             square_y += square_direction;
         }
