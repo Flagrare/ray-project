@@ -1,4 +1,4 @@
-# Raylib Circle Square Collision Game
+# [Raylib] Circle-Square: Collision Game
 
 This is a practice project to understand the basics of Raylib, rendering, user input and how to make an absolutely simple game in C.
 
